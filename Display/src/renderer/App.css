@@ -1,0 +1,168 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+/*body {
+  position: relative;
+  color: white;
+  height: 100vh;
+  background: black;
+  font-family: sans-serif;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}*/
+
+#idle-gif {
+  position: fixed;
+  max-width: 125%;
+  height: auto;
+  display: block;
+  top: -10px;
+  left: -50px;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#tSpan {
+  position: fixed;
+  top: 10px;
+  right: -30px;
+  color: #62f591; 
+  width: 180px;
+  height: 40px;
+  line-height: 30px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+
+#iSpan {
+  color: #62f591; 
+  width: 500px;
+  height: 20px;
+  line-height: 30px;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: right;
+}
+
+#rssiSpan {
+  color: #62f591; 
+  width: 500px;
+  height: 17px;
+  line-height: 30px;
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  text-align: right;
+}
+
+#HostInfo {
+  position: fixed;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 98vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#APInfo {
+  position: fixed;
+  top: 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 98vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#BTInfo {
+  position: fixed;
+  top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 98vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#SysInfo {
+  position: fixed;
+  top: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 98vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#MenuButtons {
+  position: fixed;
+  bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 98vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+button {
+  background-color: transparent;
+  color: #62f591;
+  padding: 10px 10px;
+  margin: 2px;
+  width: 60%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  appearance: none;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  box-shadow: 0px 8px 28px -6px rgba(98, 245, 145, 0.32),
+    0px 18px 88px -4px rgba(98, 245, 145, 0.34);
+  transition: all ease-in 0.1s;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  height: fit-content;
+  width: fit-content;
+  margin: 10px;
+}
+
+a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.Hello {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
