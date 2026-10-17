@@ -1,0 +1,32 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.regNodes{
+  padding: 10px;
+  border-radius: var(--xy-node-border-radius, var(--xy-node-border-radius-default));
+  width: 150px;
+  font-size: 12px;
+  color: #62f591;
+  text-align: center;
+  border: var(--xy-node-border, var(--xy-node-border-default));
+  background-color: #121212;
+}
+
+.BTNodes{
+  padding: 10px;
+  border-radius: var(--xy-node-border-radius, var(--xy-node-border-radius-default));
+  width: 150px;
+  font-size: 12px;
+  color: #7ab2fa;
+  text-align: center;
+  border: var(--xy-node-border, var(--xy-node-border-default));
+  background-color: #121212;
+}
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
