@@ -1,11 +1,10 @@
-## Skipskap
+# Skipskap
 
 A series of scripts that creates a Wardriving frontend and backend experience.
 
 The use of this is primarily intended for RaspberryPi
 
-### PYTHON
-
+## Python 
 First create a virtual environment in the Python, activate and download dependencies through requirements.txt
 
 ```
