@@ -13,6 +13,7 @@ Powered by Electron React Boilerplate
 Powered by React Flow
 
 ## Python 
+
 First create a virtual environment in the Python, activate and download dependencies through requirements.txt
 
 ```
