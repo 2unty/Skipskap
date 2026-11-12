@@ -11,12 +11,12 @@ function MainMenu(props) {
       <img id="idle-gif" src={backGif}/>
       <span id="tSpan">{props.systime}</span>
       <div id="MenuButtons">
-	<button onClick={props.dashFunc}>Dashboard</button>
-	<button onClick={props.apFunc}>Nearest Access Points</button>
-	<button onClick={props.hostFunc}>Nearest Hosts</button>
-	<button onClick={props.btFunc}>Nearest Bluetooth </button>
-	<button onClick={props.dbFunc}>Database Menu</button>
-	<button onClick={props.ctrlFunc}>Control Menu</button>
+        <button onClick={props.dashFunc}>Dashboard</button>
+        <button onClick={props.apFunc}>Nearest Access Points</button>
+        <button onClick={props.hostFunc}>Nearest Hosts</button>
+        <button onClick={props.btFunc}>Nearest Bluetooth </button>
+        <button onClick={props.dbFunc}>Database Menu</button>
+        <button onClick={props.ctrlFunc}>Control Menu</button>
       </div>
     </div>
   );
@@ -31,11 +31,11 @@ function DBMenu(props) {
         <span id="iSpan">APS: {props.apCount} | HOSTS: {props.hostCount} | BT Devices: {props.btCount}</span>
       </div>
       <div id="MenuButtons">
-	<button onClick={props.exportdb}>Export Database Menu</button>
-	<button onClick={props.clearAll}>{props.clearAllMesg}</button>
-	<button onClick={props.clearWifi}>{props.clearWifiMesg}</button>
-	<button onClick={props.clearBT}>{props.clearBTMesg}</button>
-	<button onClick={props.mainFunc}>Main Menu</button>
+        <button onClick={props.exportdb}>Export Database Menu</button>
+        <button onClick={props.clearAll}>{props.clearAllMesg}</button>
+        <button onClick={props.clearWifi}>{props.clearWifiMesg}</button>
+        <button onClick={props.clearBT}>{props.clearBTMesg}</button>
+        <button onClick={props.mainFunc}>Main Menu</button>
       </div>
     </div>
   );
@@ -48,12 +48,12 @@ function ExportMenu(props) {
       <span id="tSpan">{props.systime}</span>
       <div id = "APInfo">
         <span id="iSpan">Run the following command on a device on the same subnet:</span>
-	<span id="rssiSpan">{props.execCmd}</span>
+        <span id="rssiSpan">{props.execCmd}</span>
       </div>
       <div id="MenuButtons">
-	<button onClick={props.exportdb}>Export Database</button>
-	<button onClick={props.dbFunc}>Back to Database Menu</button>
-	<button onClick={props.mainFunc}>Main Menu</button>
+        <button onClick={props.exportdb}>Export Database</button>
+        <button onClick={props.dbFunc}>Back to Database Menu</button>
+        <button onClick={props.mainFunc}>Main Menu</button>
       </div>
     </div>
   );
@@ -65,12 +65,12 @@ function CTRLMenu(props) {
       <img id="idle-gif" src={backGif}/>
       <span id="tSpan">{props.systime}</span>
       <div id="MenuButtons">
-      <button onClick={props.beaconFunc}>{props.beaconMesg}</button>
-      <button onClick={props.scanFunc}>{props.scannerMesg}</button>
-      <button onClick={props.btScanFunc}>{props.btScannerMesg}</button>
-      <button onClick={props.ctrlFunc}>{props.controlPanelMesg}</button>
-      <button onClick={props.killFunc}>Close SkipSkap</button>
-      <button onClick={props.mainFunc}>Main Menu</button>
+        <button onClick={props.beaconFunc}>{props.beaconMesg}</button>
+        <button onClick={props.scanFunc}>{props.scannerMesg}</button>
+        <button onClick={props.btScanFunc}>{props.btScannerMesg}</button>
+        <button onClick={props.ctrlFunc}>{props.controlPanelMesg}</button>
+        <button onClick={props.killFunc}>Close SkipSkap</button>
+        <button onClick={props.mainFunc}>Main Menu</button>
       </div>
     </div>
   );
@@ -93,7 +93,7 @@ function MainDash(props) {
     for (let i = 0; i <= props.maxEntries-1; i++){
       if(!props.btEntries[i]) break;
       btElements.push(<span id="rssiSpan">{props.btEntries[i][0]} | {props.btEntries[i][4]} | {props.btEntries[i][1]} | {props.btEntries[i][2]} | {props.btEntries[i][7]} | {props.btEntries[i][3]} | {Math.round((Date.now() / 1000) - props.btEntries[i][5])}s</span>);
-    } 
+    }
   }
   // SSLF stands for "Seconds Since Last Frame"
   // PC stands for "Probe Count"
@@ -103,18 +103,18 @@ function MainDash(props) {
       <span id="tSpan">{props.systime}</span>
       <div id="HostInfo">
         <span id="iSpan">Nearest hosts (ID, ALIAS, RSSI, MAC, VENDOR, PC, SSLF):</span>
-	{hostElements}
+        {hostElements}
       </div>
       <div id="APInfo">
         <span id="iSpan">Nearest access points (ID, SSID, RSSI, BSSID, VENDOR, HOSTS, SSLF):</span>
-	{apElements}
+        {apElements}
       </div>
       <div id="BTInfo">
         <span id="iSpan">Nearest Bluetooth devices (ID, RSSI, MAC, COMPANY, VENDOR, LOCALNAME, SSLF):</span>
-	{btElements}
+        {btElements}
       </div>
       <div id="MenuButtons">
-	<button onClick={props.mainMenuFunc}>Main Menu</button>
+        <button onClick={props.mainMenuFunc}>Main Menu</button>
       </div>
       <div id="SysInfo">
         <span id="iSpan">HOTSPOT: {props.beaconMesg} | SCANNING: {props.scanMesg} | BLUETOOTH SCANNING: {props.btScanMesg}</span>
@@ -132,7 +132,7 @@ function HostDash(props) {
     for (let i = 0; i <= props.maxEntries-1; i++){
       if(!props.hostEntries[i]) break;
       hostElements.push(<span id="rssiSpan">{props.hostEntries[i][0]} | {props.hostEntries[i][4]} | {props.hostEntries[i][5]} | {props.hostEntries[i][1]} | {props.hostEntries[i][2]} | {props.hostEntries[i][3]} | {Math.round((Date.now() / 1000) - props.hostEntries[i][6])}s</span>);
-    } 
+    }
   }
   return (
     <div>
@@ -140,10 +140,10 @@ function HostDash(props) {
       <span id="tSpan">{props.systime}</span>
       <div id="HostInfo">
         <span id="iSpan">Nearest hosts (ID, ALIAS, RSSI, MAC, VENDOR, PC, SSLF):</span>
-	{hostElements}
+        {hostElements}
       </div>
       <div id="MenuButtons">
-	<button onClick={props.mainMenuFunc}>Main Menu</button>
+        <button onClick={props.mainMenuFunc}>Main Menu</button>
       </div>
     </div>
   );
@@ -164,10 +164,10 @@ function APDash(props) {
       <span id="tSpan">{props.systime}</span>
       <div id="HostInfo">
         <span id="iSpan">Nearest access points (ID, SSID, RSSI, BSSID, VENDOR, HOSTS, SSLF):</span>
-	{apElements}
+        {apElements}
       </div>
       <div id="MenuButtons">
-	<button onClick={props.mainMenuFunc}>Main Menu</button>
+        <button onClick={props.mainMenuFunc}>Main Menu</button>
       </div>
     </div>
   );
@@ -180,7 +180,7 @@ function BTDash(props) {
     for (let i = 0; i <= props.maxEntries-1; i++){
       if(!props.btEntries[i]) break;
       btElements.push(<span id="rssiSpan">{props.btEntries[i][0]} | {props.btEntries[i][4]} | {props.btEntries[i][1]} | {props.btEntries[i][2]} | {props.btEntries[i][7]} | {props.btEntries[i][3]} | {Math.round((Date.now() / 1000) - props.btEntries[i][5])}s</span>);
-    } 
+    }
   }
   return (
     <div>
@@ -188,10 +188,10 @@ function BTDash(props) {
       <span id="tSpan">{props.systime}</span>
       <div id="HostInfo">
         <span id="iSpan">Nearest Bluetooth devices (ID, RSSI, MAC, COMPANY, VENDOR, LOCALNAME, SSLF):</span>
-	{btElements}
+        {btElements}
       </div>
       <div id="MenuButtons">
-	<button onClick={props.mainMenuFunc}>Main Menu</button>
+        <button onClick={props.mainMenuFunc}>Main Menu</button>
       </div>
     </div>
   );
@@ -223,48 +223,48 @@ export default function App() {
   const portRef = useRef(0); // For db export. Not finished
   // Dictionary reference for easily settings values for modules!!
   const modulesRef = {
-	SCAN: [scanState, setScanState],
-	BLUETOOTH: [btScanState, setBTScanState],
-	BEACON: [beaconState, setBeaconState] 
+    SCAN: [scanState, setScanState],
+    BLUETOOTH: [btScanState, setBTScanState],
+    BEACON: [beaconState, setBeaconState]
   };
   const menuArray = [];
   useEffect(() => {
     async function fetchInfo(){
-        try{
-	    const res = await fetch(backEndAddr);
-	    if (!res.ok) throw new Error('Failed to fetch');
-	    const json = await res.json();
-	    // Clear arrays
-	    hostArray.current = [];
-	    apArray.current = [];
-	    btArray.current = [];
-	    let iter = 0;
-	    // For this part, remember that epoch time in Python is in seconds while epoch time in JS is in miliseconds
-	    hostCount.current = json.HOSTS.length;
-	    apCount.current = json.APS.length;
-	    btCount.current = json.BTS.length;
-	    json.HOSTS.forEach(HOST => { 
-		// If host is not the PI and time since last probe is less than 30 seconds
-	        if (iter == maxDisplays.current || HOST[1] == "2c:cf:67:ad:71:96" || ((Date.now() / 1000) - HOST[6]) > 120) return;
-		hostArray.current[iter] = HOST;
-		iter++;
-	    });
-	    iter = 0;
-	    json.APS.forEach(AP => { 
-		// If AP is not the PI and time since last beacon is less than 20 seconds
-	        if (iter == maxDisplays.current || AP[6] == "2c:cf:67:ad:71:96" || ((Date.now() / 1000) - AP[8]) > 20) return;
-		apArray.current[iter] = AP;
-		iter++;
-	    });
-	    iter = 0;
-	    json.BTS.forEach(BT => { 
-	        if (iter == maxDisplays.current || ((Date.now() / 1000) - BT[5]) > 30) return;
-		btArray.current[iter] = BT;
-		iter++;
-	    });
-        } catch (err) {
-            console.log(`Couldn't fetch database information: ${err.message}`); 
-	}
+      try{
+        const res = await fetch(backEndAddr);
+        if (!res.ok) throw new Error('Failed to fetch');
+        const json = await res.json();
+        // Clear arrays
+        hostArray.current = [];
+        apArray.current = [];
+        btArray.current = [];
+        let iter = 0;
+        // For this part, remember that epoch time in Python is in seconds while epoch time in JS is in miliseconds
+        hostCount.current = json.HOSTS.length;
+        apCount.current = json.APS.length;
+        btCount.current = json.BTS.length;
+        json.HOSTS.forEach(HOST => {
+          // If host is not the PI and time since last probe is less than 30 seconds
+          if (iter == maxDisplays.current || HOST[1] == "2c:cf:67:ad:71:96" || ((Date.now() / 1000) - HOST[6]) > 120) return;
+          hostArray.current[iter] = HOST;
+          iter++;
+        });
+        iter = 0;
+        json.APS.forEach(AP => {
+          // If AP is not the PI and time since last beacon is less than 20 seconds
+          if (iter == maxDisplays.current || AP[6] == "2c:cf:67:ad:71:96" || ((Date.now() / 1000) - AP[8]) > 20) return;
+          apArray.current[iter] = AP;
+          iter++;
+        });
+        iter = 0;
+        json.BTS.forEach(BT => {
+          if (iter == maxDisplays.current || ((Date.now() / 1000) - BT[5]) > 30) return;
+          btArray.current[iter] = BT;
+          iter++;
+        });
+      } catch (err) {
+        console.log(`Couldn't fetch database information: ${err.message}`);
+      }
     }
     const timer = setInterval(() => {
       setTime(new Date().toLocaleTimeString());
@@ -273,186 +273,186 @@ export default function App() {
     return () => clearInterval(timer);
   }, [menu]); // Menu added as a dependency for every time the user changes menu so it doesn't interfere with the timer.
   const connect = useCallback(() => {
-      if(controlPanelSock.current){
-          controlPanelSock.current.close();
-	  controlPanelSock.current = null;
+    if(controlPanelSock.current){
+      controlPanelSock.current.close();
+      controlPanelSock.current = null;
+    }
+    setConn("connecting");
+    const sock = new WebSocket(controlPanelAddr);
+    sock.binaryType = "arraybuffer";
+    controlPanelSock.current = sock;
+    sock.onopen = () =>  {setConn("connected")}
+    sock.onmessage = (evt) => {
+      try{
+        //alert("Received message from control panel!");
+        let jsonResp = JSON.parse(evt.data);
+        //alert(`Received message: ${jsonResp}`);
+        if(Object.values(jsonResp)[0] == "0"){
+          modulesRef[Object.keys(jsonResp)[0]][1](prev => !prev);
+        }
+      } catch(err) {console.log(`Couldn't parse JSON data: ${err.message}`);}
+      sock.onerror = () => {setConn("error"); alert("Could not connect to control panel!")};
+      sock.onclose = () => {
+        setConn("disconnected");
+        controlPanelSock.current = null;
       }
-      setConn("connecting");
-      const sock = new WebSocket(controlPanelAddr);
-      sock.binaryType = "arraybuffer";
-      controlPanelSock.current = sock;
-      sock.onopen = () =>  {setConn("connected")}
-      sock.onmessage = (evt) => {
-          try{
-	      //alert("Received message from control panel!");
-	      let jsonResp = JSON.parse(evt.data);
-	      //alert(`Received message: ${jsonResp}`);
-	      if(Object.values(jsonResp)[0] == "0"){ 
-	          modulesRef[Object.keys(jsonResp)[0]][1](prev => !prev); 
-	      }
-          } catch(err) {console.log(`Couldn't parse JSON data: ${err.message}`);}
-          sock.onerror = () => {setConn("error"); alert("Could not connect to control panel!")};
-          sock.onclose = () => {
-	      setConn("disconnected");
-	      controlPanelSock.current = null;
-          }
-      }
+    }
   }, [controlPanelSock]);
   const disconnect = useCallback(() => {
-      controlPanelSock.current?.close();
-      controlPanelSock.current = null;
-      setConn("disconnected");
+    controlPanelSock.current?.close();
+    controlPanelSock.current = null;
+    setConn("disconnected");
   }, []);
   const toggleModule = (module) => {
-      controlPanelSock.current?.send(JSON.stringify({MODULE: module}))
+    controlPanelSock.current?.send(JSON.stringify({MODULE: module}))
   }
   const exportCmdGen = () => { // Idk if I'm ever gonna finish this lol
-      portRef.current = Math.floor(Math.random() * (10000-5000 + 1)) + 5000;
-      return `nc -lvnp ${portRef.current} > <filename>.sql`
+    portRef.current = Math.floor(Math.random() * (10000-5000 + 1)) + 5000;
+    return `nc -lvnp ${portRef.current} > <filename>.sql`
   }
   const exportDB = () => {
-      controlPanelSock.current?.send(JSON.stringify({EXPORT: portRef.current}));
+    controlPanelSock.current?.send(JSON.stringify({EXPORT: portRef.current}));
   }
   const clearDatabase = async (num) => {
-	let param = "";
-	switch(num){
-	    case 0:
-		param = "all";
-	    	break;
-	    case 1:
-		param = "wifi";
-	    	break;
-	    case 2:
-		param = "bt";
-	    	break;
-	}
-        try{
-	    const res = await fetch(`/api/clear?param=${param}`);
-	    if (!res.ok) throw new Error('Failed to clear');
-        } catch (err) {
-            console.log(`Couldn't clear database: ${err.message}`); 
-	}
+    let param = "";
+    switch(num){
+      case 0:
+        param = "all";
+        break;
+      case 1:
+        param = "wifi";
+        break;
+      case 2:
+        param = "bt";
+        break;
+    }
+    try{
+      const res = await fetch(`http://localhost:5000/api/clear?param=${param}`);
+      if (!res.ok) throw new Error('Failed to clear');
+    } catch (err) {
+      console.log(`Couldn't clear database: ${err.message}`);
+    }
   }
   const resetClearRefs = () => {
-	clearAllRef.current=0; 
-	clearWifiRef.current=0;
-	clearBTRef.current=0;
+    clearAllRef.current=0;
+    clearWifiRef.current=0;
+    clearBTRef.current=0;
   }
   const setMenu = (num) => {
-	setMenuState(num);
-	menuRef.current = num;
+    setMenuState(num);
+    menuRef.current = num;
   }
   menuArray.push(
-	  <MainMenu 
-		systime={time} 
-		apFunc={() => {maxDisplays.current = 12; setMenu(2)}}
-		hostFunc={() => {maxDisplays.current = 12; setMenu(3)}}
-		btFunc={() => {maxDisplays.current = 12; setMenu(7)}}
-		dashFunc={() => {maxDisplays.current = 2; setMenu(1)}} 
-		dbFunc={() => {setMenu(5)}}
-		ctrlFunc={() => {setMenu(4)}}
-	  />
+    <MainMenu
+      systime={time}
+      apFunc={() => {maxDisplays.current = 12; setMenu(2)}}
+      hostFunc={() => {maxDisplays.current = 12; setMenu(3)}}
+      btFunc={() => {maxDisplays.current = 12; setMenu(7)}}
+      dashFunc={() => {maxDisplays.current = 2; setMenu(1)}}
+      dbFunc={() => {setMenu(5)}}
+      ctrlFunc={() => {setMenu(4)}}
+    />
   );
   menuArray.push(
-	  <MainDash 
-	  	systime={time} 
-		hostEntries={hostArray.current} 
-		apEntries={apArray.current} 
-		btEntries={btArray.current}
-		mainMenuFunc={() => {setMenu(0)}} 
-		maxEntries={maxDisplays.current}
-		beaconMesg={modulesRef["BEACON"][0] ? "ON" : "OFF"}
-		scanMesg={modulesRef["SCAN"][0] ? "ON" : "OFF"}
-		btScanMesg={modulesRef["BLUETOOTH"][0] ? "ON" : "OFF"}
-	  />
+    <MainDash
+      systime={time}
+      hostEntries={hostArray.current}
+      apEntries={apArray.current}
+      btEntries={btArray.current}
+      mainMenuFunc={() => {setMenu(0)}}
+      maxEntries={maxDisplays.current}
+      beaconMesg={modulesRef["BEACON"][0] ? "ON" : "OFF"}
+      scanMesg={modulesRef["SCAN"][0] ? "ON" : "OFF"}
+      btScanMesg={modulesRef["BLUETOOTH"][0] ? "ON" : "OFF"}
+    />
   );
   menuArray.push(
-	  <APDash 
-	  	systime={time} 
-		apEntries={apArray.current} 
-		mainMenuFunc={() => {setMenu(0)}} 
-		maxEntries={maxDisplays.current}
-	  />
+    <APDash
+      systime={time}
+      apEntries={apArray.current}
+      mainMenuFunc={() => {setMenu(0)}}
+      maxEntries={maxDisplays.current}
+    />
   );
   menuArray.push(
-	  <HostDash 
-	  	systime={time} 
-		hostEntries={hostArray.current} 
-		mainMenuFunc={() => {setMenu(0)}} 
-		maxEntries={maxDisplays.current}
-	  />
+    <HostDash
+      systime={time}
+      hostEntries={hostArray.current}
+      mainMenuFunc={() => {setMenu(0)}}
+      maxEntries={maxDisplays.current}
+    />
   );
   menuArray.push(
-	  <CTRLMenu 
-		systime={time} 
-		beaconFunc={() => {toggleModule("BEACON")}}  
-		beaconMesg={modulesRef["BEACON"][0] ? "Turn Off Hotspot" : "Turn On Hotspot"}
-		scanFunc={() => {toggleModule("SCAN")}}  
-		scannerMesg={modulesRef["SCAN"][0] ? "Turn Off Scanner" : "Turn On Scanner"}
-		btScanFunc={() => {toggleModule("BLUETOOTH")}}  
-		btScannerMesg={modulesRef["BLUETOOTH"][0] ? "Turn Off BT Scanner" : "Turn On BT Scanner"}
-		ctrlFunc={conn==="connected" ? disconnect : connect} 
-		controlPanelMesg={conn==="connected" ? "Disconnect From Control Panel" : "Connect To Control Panel"}
-    		killFunc={() => {toggleModule("KILL")}}
-		mainFunc={() => {setMenu(0)}}
-	  />
+    <CTRLMenu
+      systime={time}
+      beaconFunc={() => {toggleModule("BEACON")}}
+      beaconMesg={modulesRef["BEACON"][0] ? "Turn Off Hotspot" : "Turn On Hotspot"}
+      scanFunc={() => {toggleModule("SCAN")}}
+      scannerMesg={modulesRef["SCAN"][0] ? "Turn Off Scanner" : "Turn On Scanner"}
+      btScanFunc={() => {toggleModule("BLUETOOTH")}}
+      btScannerMesg={modulesRef["BLUETOOTH"][0] ? "Turn Off BT Scanner" : "Turn On BT Scanner"}
+      ctrlFunc={conn==="connected" ? disconnect : connect}
+      controlPanelMesg={conn==="connected" ? "Disconnect From Control Panel" : "Connect To Control Panel"}
+      killFunc={() => {toggleModule("KILL")}}
+      mainFunc={() => {setMenu(0)}}
+    />
   );
   menuArray.push(
-	  <DBMenu 
-		systime={time} 
-		hostCount={hostCount.current}
-		apCount={apCount.current}
-		btCount={btCount.current}
-		exportdb={() => {setMenu(6); resetClearRefs();}}
-		clearAll={() => {	
-		  if (clearAllRef.current==0){
-		      clearAllRef.current=1;
-	  	  }
-		  else if (clearAllRef.current==1){
-		      clearDatabase(0);
-		      resetClearRefs();
-		  }
-		}}  
-		clearAllMesg={clearAllRef.current==1 ? "Are you sure?" : "Clear All"} 
-		clearWifi={() => {	
-		  if (clearWifiRef.current==0){
-		      clearWifiRef.current=1;
-	  	  }
-		  else if (clearWifiRef.current==1){
-		      clearDatabase(1);
-		      resetClearRefs();
-		  }
-		}}  
-		clearWifiMesg={clearWifiRef.current==1 ? "Are you sure?" : "Clear Wifi Entries"} 
-		clearBT={() => {	
-		  if (clearBTRef.current==0){
-		      clearBTRef.current=1;
-	  	  }
-		  else if (clearBTRef.current==1){
-		      clearDatabase(2);
-		      resetClearRefs();
-		  }
-		}}  
-		clearBTMesg={clearBTRef.current==1 ? "Are you sure?" : "Clear Bluetooth Entries"} 
-		mainFunc={() => {setMenu(0); resetClearRefs();}}
-	  />
+    <DBMenu
+      systime={time}
+      hostCount={hostCount.current}
+      apCount={apCount.current}
+      btCount={btCount.current}
+      exportdb={() => {setMenu(6); resetClearRefs();}}
+      clearAll={() => {
+        if (clearAllRef.current==0){
+          clearAllRef.current=1;
+        }
+        else if (clearAllRef.current==1){
+          clearDatabase(0);
+          resetClearRefs();
+        }
+      }}
+      clearAllMesg={clearAllRef.current==1 ? "Are you sure?" : "Clear All"}
+      clearWifi={() => {
+        if (clearWifiRef.current==0){
+          clearWifiRef.current=1;
+        }
+        else if (clearWifiRef.current==1){
+          clearDatabase(1);
+          resetClearRefs();
+        }
+      }}
+      clearWifiMesg={clearWifiRef.current==1 ? "Are you sure?" : "Clear Wifi Entries"}
+      clearBT={() => {
+        if (clearBTRef.current==0){
+          clearBTRef.current=1;
+        }
+        else if (clearBTRef.current==1){
+          clearDatabase(2);
+          resetClearRefs();
+        }
+      }}
+      clearBTMesg={clearBTRef.current==1 ? "Are you sure?" : "Clear Bluetooth Entries"}
+      mainFunc={() => {setMenu(0); resetClearRefs();}}
+    />
   );
   menuArray.push(
-	  <ExportMenu 
-		systime={time} 
-		execCmd={`${exportCmdGen()}`}
-		exportdb={exportDB}
-		dbFunc={() => {setMenu(5)}}
-		mainFunc={() => {setMenu(0)}}
-	  />
+    <ExportMenu
+      systime={time}
+      execCmd={`${exportCmdGen()}`}
+      exportdb={exportDB}
+      dbFunc={() => {setMenu(5)}}
+      mainFunc={() => {setMenu(0)}}
+    />
   );
   menuArray.push( // Menu 7
-	  <BTDash 
-	  	systime={time} 
-		btEntries={btArray.current} 
-		mainMenuFunc={() => {setMenu(0)}} 
-		maxEntries={maxDisplays.current}
-	  />
+    <BTDash
+      systime={time}
+      btEntries={btArray.current}
+      mainMenuFunc={() => {setMenu(0)}}
+      maxEntries={maxDisplays.current}
+    />
   );
   return (
     <Router>
