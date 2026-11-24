@@ -1,0 +1,17 @@
+CREATE SCHEMA IF NOT EXISTS Scanned;
+
+CREATE TABLE Scanned.APS(
+
+)
+
+CREATE TABLE Scanned.HOSTS(
+
+)
+
+CREATE TABLE Scanned.BTS(
+
+)
+
+CREATE TABLE Scanned.LINKS(
+
+)
