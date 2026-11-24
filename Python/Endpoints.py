@@ -134,23 +134,23 @@ def fetchall():
                 queries.execute("SELECT * FROM BTS ORDER BY RSSI DESC")
                 fullData["BTS"]=queries.fetchall()
                 # Search for hosts w/ strongest signal
-                queries.execute("SELECT * FROM HOSTS ORDER BY RSSI DESC")         
+                queries.execute("SELECT * FROM HOSTS ORDER BY RSSI DESC")
                 fullData["HOSTS"]=queries.fetchall()
                 # Search for APs w/ strongest signal
-                queries.execute("SELECT * FROM APS ORDER BY RSSI DESC")         
+                queries.execute("SELECT * FROM APS ORDER BY RSSI DESC")
                 fullData["APS"]=queries.fetchall()
             case "recent": 
                 # Search for bluetooth w/ latest timestamp 
                 queries.execute("SELECT * FROM BTS ORDER BY TIMESTAMP DESC")
                 fullData["BTS"]=queries.fetchall()
                 # Search for hosts w/ latest timestamp 
-                queries.execute("SELECT * FROM HOSTS ORDER BY TIMESTAMP DESC")         
+                queries.execute("SELECT * FROM HOSTS ORDER BY TIMESTAMP DESC")
                 fullData["HOSTS"]=queries.fetchall()
                 # Search for APs w/ latest timestamp
-                queries.execute("SELECT * FROM APS ORDER BY TIMESTAMP DESC")         
+                queries.execute("SELECT * FROM APS ORDER BY TIMESTAMP DESC")
                 fullData["APS"]=queries.fetchall()
                 # Search for LINKS w/ latest timestamp
-                queries.execute("SELECT * FROM LINKS ORDER BY TIMESTAMP DESC")         
+                queries.execute("SELECT * FROM LINKS ORDER BY TIMESTAMP DESC")
                 fullData["LINKS"]=queries.fetchall()
             
         queries.close()
