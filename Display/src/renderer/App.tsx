@@ -81,7 +81,7 @@ function MainDash(props) {
   const hostElements = [];
   const apElements = [];
   const btElements = [];
-  if (props.hostEntries.length > 0 && props.apEntries.length > 0){
+  if (props.hostEntries.length > 0 || props.apEntries.length > 0 || props.btEntries.length > 0){
     for (let i = 0; i <= props.maxEntries-1; i++){
       if(!props.hostEntries[i]) break;
       hostElements.push(<span id="rssiSpan">{props.hostEntries[i][0]} | {props.hostEntries[i][8]} | {props.hostEntries[i][3]} | {props.hostEntries[i][1]} | {props.hostEntries[i][2]} | {props.hostEntries[i][4]} | {Math.round((Date.now() / 1000) - props.hostEntries[i][6])}s</span>);
@@ -252,13 +252,13 @@ export default function App() {
         iter = 0;
         json.APS.forEach(AP => {
           // If AP is not the PI and time since last beacon is less than 20 seconds
-          if (iter == maxDisplays.current || AP[6] == "2c:cf:67:ad:71:96" || ((Date.now() / 1000) - AP[8]) > 20) return;
+          if (iter == maxDisplays.current || AP[1] == "2c:cf:67:ad:71:96" || ((Date.now() / 1000) - AP[7]) > 20) return;
           apArray.current[iter] = AP;
           iter++;
         });
         iter = 0;
         json.BTS.forEach(BT => {
-          if (iter == maxDisplays.current || ((Date.now() / 1000) - BT[5]) > 30) return;
+          if (iter == maxDisplays.current || ((Date.now() / 1000) - BT[6]) > 30) return;
           btArray.current[iter] = BT;
           iter++;
         });
