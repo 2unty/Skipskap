@@ -5,6 +5,7 @@ A series of scripts that creates a Wardriving frontend and backend experience on
 ## What is included:
 
 ### Interface
+![Menu Screenshot](Assets/Menu.png)
   - Powered by Electron React Boilerplate
   - Provides a legible dashboard displaying nearby wireless devices
   - Provides basic controls of the wardriver including:
