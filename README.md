@@ -6,11 +6,13 @@ A series of scripts that creates a Wardriving frontend and backend experience on
 <img src="Assets/Menu.png" alt="Main Menu Screenshot"/>
 <br>
 <em>Main menu</em>
+</p>
+
+<p align="center">
 <img src="Assets/BTDash1.png" alt="BT Dashboard Screenshot"/>
 <br>
 <em>Bluetooth dashboard</em>
 </p>
-
 ## What is included:
 
 ### Interface
