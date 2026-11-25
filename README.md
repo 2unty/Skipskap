@@ -2,11 +2,12 @@
 
 A series of scripts that creates a Wardriving frontend and backend experience on Raspberry Pi.
 
+![Menu Screenshot](Assets/Menu.png)
+![BT Dashboard Screenshot](Assets/BTDash1.png)
+
 ## What is included:
 
 ### Interface
-![Menu Screenshot](Assets/Menu.png)
-![BT Dashboard Screenshot](Assets/BTDash1.png)
   - Powered by Electron React Boilerplate
   - Provides a legible dashboard displaying nearby wireless devices
   - Provides basic controls of the wardriver including:
