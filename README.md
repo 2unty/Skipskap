@@ -2,8 +2,12 @@
 
 A series of scripts that creates a Wardriving frontend and backend experience on Raspberry Pi.
 
+<p align="center>
 ![Menu Screenshot](Assets/Menu.png)
+*Main menu*
 ![BT Dashboard Screenshot](Assets/BTDash1.png)
+*Bluetooth dashboard*
+</p>
 
 ## What is included:
 
