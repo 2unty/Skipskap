@@ -2,7 +2,7 @@
 
 A series of scripts that creates a Wardriving frontend and backend experience on Raspberry Pi.
 
-<p align="center>
+<p align="center">
 <img src="Assets/Menu.png" alt="Main Menu Screenshot"/>
 <br>
 <em>Main menu</em>
