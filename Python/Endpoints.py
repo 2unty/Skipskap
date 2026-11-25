@@ -56,7 +56,7 @@ def updateEntry():
                     queries.execute("INSERT INTO APS (BSSID, SSID, RSSI, VENDOR, COMMENT, COUNT, HOSTS, TIMESTAMP, FIRSTSIG) VALUES (?, ?, ?, ?, 'NONE', 0, 0, ?, ?)", (data["AP"]["BSSID"], data["AP"]["SSID"], data["AP"]["RSSI"], vendor, time.time(), time.time()))
             else: # If this is an AP discovered via probe frame instead of beacon
                 if not AP: 
-                    queries.execute("INSERT INTO APS (SSID, COMMENT, COUNT, HOSTS, TIMESTAMP, FIRSTSIG) VALUES (?, 'NONE', 0, 0, ?, ?)", (data["AP"]["SSID"], time.time(), time.time()))
+                    queries.execute("INSERT INTO APS (SSID, COMMENT, COUNT, HOSTS, TIMESTAMP, FIRSTSIG, RSSI) VALUES (?, 'NONE', 0, 0, ?, ?, 0)", (data["AP"]["SSID"], time.time(), time.time()))
                 
             queries.execute("SELECT ID FROM APS WHERE SSID = ?", (data["AP"]["SSID"],))
             APID = int(queries.fetchone()[0])
@@ -66,7 +66,7 @@ def updateEntry():
             queries.execute("SELECT * FROM HOSTS WHERE MAC = ?", (data["HOST"]["MAC"],))
             HOST = queries.fetchall()
             if not HOST:
-                queries.execute("INSERT INTO HOSTS (MAC, VENDOR, RSSI, ALIAS, COUNT, TIMESTAMP, FIRSTSIG) VALUES (?, ?, ?, 'NONE', 1, ?, ?)", (data["HOST"]["MAC"], vendor, data["HOST"]["RSSI"], time.time(), time.time()))
+                queries.execute("INSERT INTO HOSTS (MAC, VENDOR, RSSI, COMMENT, COUNT, TIMESTAMP, FIRSTSIG) VALUES (?, ?, ?, 'NONE', 1, ?, ?)", (data["HOST"]["MAC"], vendor, data["HOST"]["RSSI"], time.time(), time.time()))
 
             queries.execute("SELECT ID FROM HOSTS WHERE MAC = ?", (data["HOST"]["MAC"],))
             HID = int(queries.fetchone()[0])
@@ -94,7 +94,7 @@ def updateEntry():
             if not BT:
                 companyIdent = "company_identifier" in data["BT"] and data["BT"]["company_identifier"] or "No CID"
                 localName = "local_name" in data["BT"] and data["BT"]["local_name"] or "No Local Name"
-                queries.execute("INSERT INTO BTS (MAC, COMPANY, LOCALNAME, RSSI, TIMESTAMP, FIRSTSIG, VENDOR) VALUES (?, ?, ?, ?, ?, ?, ?)", (data["BT"]["addr"], companyIdent, localName, data["BT"]["rssi"], time.time(), time.time(), vendor))
+                queries.execute("INSERT INTO BTS (MAC, COMPANY, LOCALNAME, RSSI, TIMESTAMP, FIRSTSIG, VENDOR, COMMENT) VALUES (?, ?, ?, ?, ?, ?, ?, 'NONE')", (data["BT"]["addr"], companyIdent, localName, data["BT"]["rssi"], time.time(), time.time(), vendor))
 
             queries.execute("SELECT ID FROM BTS WHERE MAC = ?", (data["BT"]["addr"],))
             BID = int(queries.fetchone()[0])

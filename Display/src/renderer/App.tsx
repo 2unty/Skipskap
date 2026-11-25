@@ -84,15 +84,15 @@ function MainDash(props) {
   if (props.hostEntries.length > 0 && props.apEntries.length > 0){
     for (let i = 0; i <= props.maxEntries-1; i++){
       if(!props.hostEntries[i]) break;
-      hostElements.push(<span id="rssiSpan">{props.hostEntries[i][0]} | {props.hostEntries[i][4]} | {props.hostEntries[i][5]} | {props.hostEntries[i][1]} | {props.hostEntries[i][2]} | {props.hostEntries[i][3]} | {Math.round((Date.now() / 1000) - props.hostEntries[i][6])}s</span>);
+      hostElements.push(<span id="rssiSpan">{props.hostEntries[i][0]} | {props.hostEntries[i][8]} | {props.hostEntries[i][3]} | {props.hostEntries[i][1]} | {props.hostEntries[i][2]} | {props.hostEntries[i][4]} | {Math.round((Date.now() / 1000) - props.hostEntries[i][6])}s</span>);
     }
     for (let i = 0; i <= props.maxEntries-1; i++){
       if(!props.apEntries[i]) break;
-      apElements.push(<span id="rssiSpan">{props.apEntries[i][0]} | {props.apEntries[i][1]} | {props.apEntries[i][5]} | {props.apEntries[i][6]} | {props.apEntries[i][4]} | {props.apEntries[i][7]} | {Math.round((Date.now() / 1000) - props.apEntries[i][8])}s</span>);
+      apElements.push(<span id="rssiSpan">{props.apEntries[i][0]} | {props.apEntries[i][1]} | {props.apEntries[i][6]} | {props.apEntries[i][2]} | {props.apEntries[i][3]} | {props.apEntries[i][4]} | {Math.round((Date.now() / 1000) - props.apEntries[i][7])}s</span>);
     }
     for (let i = 0; i <= props.maxEntries-1; i++){
       if(!props.btEntries[i]) break;
-      btElements.push(<span id="rssiSpan">{props.btEntries[i][0]} | {props.btEntries[i][4]} | {props.btEntries[i][1]} | {props.btEntries[i][2]} | {props.btEntries[i][7]} | {props.btEntries[i][3]} | {Math.round((Date.now() / 1000) - props.btEntries[i][5])}s</span>);
+      btElements.push(<span id="rssiSpan">{props.btEntries[i][0]} | {props.btEntries[i][5]} | {props.btEntries[i][1]} | {props.btEntries[i][2]} | {props.btEntries[i][4]} | {props.btEntries[i][3]} | {Math.round((Date.now() / 1000) - props.btEntries[i][6])}s</span>);
     }
   }
   // SSLF stands for "Seconds Since Last Frame"
@@ -131,7 +131,7 @@ function HostDash(props) {
   if (props.hostEntries.length > 0){
     for (let i = 0; i <= props.maxEntries-1; i++){
       if(!props.hostEntries[i]) break;
-      hostElements.push(<span id="rssiSpan">{props.hostEntries[i][0]} | {props.hostEntries[i][4]} | {props.hostEntries[i][5]} | {props.hostEntries[i][1]} | {props.hostEntries[i][2]} | {props.hostEntries[i][3]} | {Math.round((Date.now() / 1000) - props.hostEntries[i][6])}s</span>);
+      hostElements.push(<span id="rssiSpan">{props.hostEntries[i][0]} | {props.hostEntries[i][8]} | {props.hostEntries[i][3]} | {props.hostEntries[i][1]} | {props.hostEntries[i][2]} | {props.hostEntries[i][4]} | {Math.round((Date.now() / 1000) - props.hostEntries[i][6])}s</span>);
     }
   }
   return (
@@ -155,7 +155,7 @@ function APDash(props) {
   if (props.apEntries.length > 0){
     for (let i = 0; i <= props.maxEntries-1; i++){
       if(!props.apEntries[i]) break;
-      apElements.push(<span id="rssiSpan">{props.apEntries[i][0]} | {props.apEntries[i][1]} | {props.apEntries[i][5]} | {props.apEntries[i][6]} | {props.apEntries[i][4]} | {props.apEntries[i][7]} | {Math.round((Date.now() / 1000) - props.apEntries[i][8])}s</span>);
+      apElements.push(<span id="rssiSpan">{props.apEntries[i][0]} | {props.apEntries[i][1]} | {props.apEntries[i][6]} | {props.apEntries[i][2]} | {props.apEntries[i][3]} | {props.apEntries[i][4]} | {Math.round((Date.now() / 1000) - props.apEntries[i][7])}s</span>);
     }
   }
   return (
@@ -179,7 +179,7 @@ function BTDash(props) {
   if (props.btEntries.length > 0){
     for (let i = 0; i <= props.maxEntries-1; i++){
       if(!props.btEntries[i]) break;
-      btElements.push(<span id="rssiSpan">{props.btEntries[i][0]} | {props.btEntries[i][4]} | {props.btEntries[i][1]} | {props.btEntries[i][2]} | {props.btEntries[i][7]} | {props.btEntries[i][3]} | {Math.round((Date.now() / 1000) - props.btEntries[i][5])}s</span>);
+      btElements.push(<span id="rssiSpan">{props.btEntries[i][0]} | {props.btEntries[i][5]} | {props.btEntries[i][1]} | {props.btEntries[i][2]} | {props.btEntries[i][4]} | {props.btEntries[i][3]} | {Math.round((Date.now() / 1000) - props.btEntries[i][6])}s</span>);
     }
   }
   return (
@@ -244,7 +244,7 @@ export default function App() {
         apCount.current = json.APS.length;
         btCount.current = json.BTS.length;
         json.HOSTS.forEach(HOST => {
-          // If host is not the PI and time since last probe is less than 30 seconds
+          // If host is not the PI and time since last probe is less than 120 seconds
           if (iter == maxDisplays.current || HOST[1] == "2c:cf:67:ad:71:96" || ((Date.now() / 1000) - HOST[6]) > 120) return;
           hostArray.current[iter] = HOST;
           iter++;
