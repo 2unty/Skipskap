@@ -1,18 +1,27 @@
+<div align="center">
+
 # Skipskap
 
-A series of scripts that creates a Wardriving frontend and backend experience on Raspberry Pi.
+<div>
+    <img src="Assets/Cyber.png" height=250 alt="Neo Alien"/>
+</div>
 
-<p align="center">
-<img src="Assets/Menu.png" alt="Main Menu Screenshot"/>
-<br>
-<em>Main menu</em>
-</p>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<p align="center">
-<img src="Assets/BTDash1.png" alt="BT Dashboard Screenshot"/>
-<br>
-<em>Bluetooth dashboard</em>
-</p>
+<p>A series of scripts that creates a Wardriving frontend and backend experience on Raspberry Pi.</p>
+
+<div>
+    <img src="Assets/Menu.png" alt="Main Menu Screenshot"/>
+    <br>
+    <em>Main menu</em>
+</div>
+<div>
+    <img src="Assets/BTDash1.png" alt="BT Dashboard Screenshot"/>
+    <br>
+    <em>Bluetooth dashboard</em>
+</div>
+
+</div>
 
 ## What is included:
 
