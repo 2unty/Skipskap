@@ -3,7 +3,7 @@
 # Skipskap
 
 <div>
-    <img src="Assets/Cyber.png" height=500 alt="Neo Alien"/>
+    <img src="Assets/Cyber.png" height=900 alt="Neo Alien"/>
 </div>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
