@@ -6,9 +6,9 @@
     <img src="Assets/Cyber.png" height=900 alt="Neo Alien"/>
 </div>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 <p>A series of scripts that creates a Wardriving frontend and backend experience on Raspberry Pi.</p>
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <div>
     <img src="Assets/Menu.png" alt="Main Menu Screenshot"/>
